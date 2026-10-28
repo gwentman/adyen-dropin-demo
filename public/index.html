@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Adyen Drop-in Demo</title>
+  <link rel="stylesheet" href="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.46.0/adyen.css" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 960px; margin: 32px auto; padding: 0 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    h1 { grid-column: 1 / -1; margin: 0; }
+    #result { margin-top: 16px; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    td, th { border-bottom: 1px solid #ddd; padding: 6px 4px; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Demo Shop checkout</h1>
+
+  <section>
+    <label>Market:
+      <select id="country">
+        <option value="AU">Australia (AUD)</option>
+        <option value="NL">Netherlands (EUR)</option>
+        <option value="JP">Japan (JPY)</option>
+      </select>
+    </label>
+    <p id="amount"></p>
+    <div id="dropin-container"></div>
+    <div id="result"></div>
+  </section>
+
+  <section>
+    <h3>Orders (refreshes every 2s)</h3>
+    <table>
+      <thead><tr><th>Reference</th><th>Amount</th><th>Webhook status</th></tr></thead>
+      <tbody id="orders"></tbody>
+    </table>
+  </section>
+
+  <script src="https://checkoutshopper-test.cdn.adyen.com/checkoutshopper/sdk/6.46.0/adyen.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
